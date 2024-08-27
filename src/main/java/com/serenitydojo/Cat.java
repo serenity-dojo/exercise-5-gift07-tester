@@ -1,37 +1,66 @@
 package com.serenitydojo;
 
-public class Cat {
-    private String name;
+public class Cat extends Pet {
+    private String favoriteFood;
     private String favoriteToy;
-    private int age;
 
-    public Cat(String name, String favoriteToy, int age) {
-        this.name = name;
+    public static final String  CAT_SOUND = "meow";
+
+    public static String usualFood(){
+        return "Tuna";
+    }
+    public Cat(String name, int age){
+        super(name,age);
+        this.favoriteFood = usualFood();
+
+
+    }
+    public Cat(String name, int age,String favoriteToy) {
+        super(name,age);
         this.favoriteToy = favoriteToy;
-        this.age = age;
+    }
+    public Cat(String name, String favoriteFood, int age){
+        super(name,age);
+        this.favoriteFood = favoriteFood;
+
+
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
-    public String getFavoriteToy() {
+    public String getFavoriteFood(){
+        return favoriteFood;
+    }
+    public String getFavoriteToy(){
         return favoriteToy;
     }
 
-    public void setFavoriteToy(String favoriteToy) {
-        this.favoriteToy = favoriteToy;
+
+    @Override
+    public String makeNoise(){
+        return CAT_SOUND;
     }
 
-    public int getAge() {
-        return age;
+
+    public void feed(String food) {
+        System.out.println(getName() + "eats " + food);
+    }
+    public void groom(){
+        lickPaw();
+        cleanFur();
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    private void cleanFur() {
+        System.out.println(getName() + "cleans fur");
     }
+
+    private void lickPaw() {
+        System.out.println(getName() + "licks paw");
+    }
+    @Override
+    public String play(){
+        return "plays with string";
+
+    }
+
 }
