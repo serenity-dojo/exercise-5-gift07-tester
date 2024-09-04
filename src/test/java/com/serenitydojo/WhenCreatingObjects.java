@@ -16,7 +16,7 @@ public class WhenCreatingObjects {
         String favoriteFood = "Tuna";
         int age = 5;
 
-        Cat felix = new Cat("Felix","Tuna",4);
+        Cat felix = new Cat("Felix",4);
         System.out.println(felix.getName());
         System.out.println(felix.getFavoriteFood());
         System.out.println(felix.getAge());
@@ -88,6 +88,7 @@ public class WhenCreatingObjects {
         assertThat(hazel.play(),equalTo("runs in wheel"));
 
     }
+
 
 
 }
